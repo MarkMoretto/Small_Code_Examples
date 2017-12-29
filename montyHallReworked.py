@@ -1,9 +1,20 @@
 """
-Topic: Reworking the Monty Hall Problem
+Topic: The Monty Hall Problem Solved with Sets
 
-Author: Anontipster
+Author: Mark Moretto
 
 Date Started: 12/23/2017
+
+Examples:
+In[1]: MontyHallSim(1000)
+Number of wins: 685
+Number of losses: 315
+Winning percentage: 68.50%
+
+In[2]: MontyHallSim(1000, switch=False)
+Number of wins: 333
+Number of losses: 667
+Winning percentage: 33.30%
 """
 
 
