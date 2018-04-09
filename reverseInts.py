@@ -1,19 +1,16 @@
 """
-Topic: Reverse Integers
-URL: https://leetcode.com/problems/reverse-integer/description/
-
+Topic: Reversing Integers with Python
 Author: Mark Moretto
 Date Created: 12/29/2017
 
-Challenge:
+Challenge to complete:
 
 Given a 32-bit signed integer, reverse digits of an integer.
 
-    Example 1:
+Example:
 
-    Input: 123
-    Output:  321
-
+Input: 123
+Output:  321
 """
 
 
