@@ -39,8 +39,6 @@ from random import randint
 from getpass import getuser
 from datetime import datetime
 
-""" Uncomment to import calendar package if DateGroups class will be used"""
-#import calendar
 
 ##################################################
 # User variables
