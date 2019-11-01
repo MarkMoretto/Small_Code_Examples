@@ -213,7 +213,9 @@ class MatrixMadness:
 
 
     def quarter_rotate(self, matrix, direction='CW'):
-        """Invert matrix. Use again to return matrix to original form."""
+        """
+        Rotate a matrix one-quarter (90-degrees) turn.  CW for clockwise and CCW for counterclockwise.
+        """
         return self.inverse_rows(self.transpose(matrix)) if direction=='CCW' else self.inverse_cols(self.transpose(matrix))
 
 
@@ -232,7 +234,8 @@ class MatrixMadness:
 
     @staticmethod
     def sv_product(scalar, vector):
-        """Multiply all elements of a vector by a scalar.
+        """
+        Multiply all elements of a vector by a scalar.
         Example:
             self.sv_product(-2, [1,2,3,4,]) -> [-2, -4, -6, -8]
         """
@@ -486,59 +489,4 @@ class ExceptionalException(Exception):
 class WheresTheMatrix(ExceptionalException):
     pass
 
-
-
-
-class Answers:
-    """
-    Answers for questions 1 and 2 from Central Health
-
-    Functions and parameters
-        Q1 - Sums the total of a 200 x 200 matrix
-            rows: Number of rows in matrix (default: 200)
-            columns: Number of columns in matrix (default: 200)
-            print_matrix: Print matrix when complete.
-
-            Can get matrix result with `self.mm.matrix` once function is run.
-
-        Q2 - Reformats matrix into row-reduced echelon format (RREF)
-            matrix_object: Required parameter or the function will fail.
-
-            Can get RREF result with `self.rref.matrix` once function is run.
-
-    """
-    def __init__(self):
-        self.mm = MatrixMadness()
-
-
-    def __repr__(self):
-        return 'CH Answers class'
-
-
-    def Q1(self, rows=200, columns=200, print_matrix=False):
-        """
-        Question 1
-        """
-        self.mm.update_matrix(self.mm.creatrix(rows, columns))
-        unraveled = self.mm.unravel(self.mm.matrix)
-        self.Q1_answer = SUM(unraveled)
-
-        if print_matrix:
-            self.mm.print_matrix(self.mm.matrix)
-
-        res_msg = f'\nThe sum of this 200 x 200 matrix is: {self.Q1_answer}'
-        print(res_msg)
-
-
-    def Q2(self, matrix):
-        """
-        Question 2.
-        
-        Will run automatically once called with valid matrix argument.
-        """
-        try:
-            self.rref = RREF(matrix)
-            self.rref.run()
-        except WheresTheMatrix:
-            print('Error! Matrix object not found.')
 
